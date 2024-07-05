@@ -2,7 +2,6 @@
 meus estudos para resolver um cubo magico
 asdasdas
 
-# Sumário
 
 
 <h1>Sumário</h1>
@@ -20,4 +19,3 @@ asdasdas
        - <a href="1_ 2 - Tutorial">1_ 2 - Tutorial</a>
            - <a href="1º PASSO: PREPARAR A CRUZ.md">1º PASSO: PREPARAR A CRUZ.md</a>
    - <a href="README.md">README.md</a>
-

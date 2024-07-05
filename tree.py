@@ -88,14 +88,15 @@ def create_summary_without_pages(file_map):
 
 def update_readme_with_links(file_map, file_tree):
     """Update README.md with links to the PDF pages"""
-    readme_content = ""
-    if readme_file.exists():
-        with readme_file.open("r", encoding="utf-8") as file:
-            readme_content = file.read()
+    if not readme_file.exists():
+        print(f"{readme_file} does not exist.")
+        return
 
-    summary_content = create_summary_without_pages(file_map)
+    # Read the current content of README.md
+    with readme_file.open("r", encoding="utf-8") as file:
+        readme_content = file.read()
 
-    # Find the position of "# Sumário" and replace the old file tree with the new one
+    # Remove old summary section if it exists
     summary_position = readme_content.find("# Sumário")
     if summary_position != -1:
         summary_position_end = readme_content.find("\n", summary_position)
@@ -104,18 +105,17 @@ def update_readme_with_links(file_map, file_tree):
             if next_section_position == -1:
                 next_section_position = len(readme_content)
             readme_content = (
-                readme_content[: summary_position_end + 1]
-                + "\n\n"
-                + summary_content
-                + "\n\n"
-                + file_tree
-                + "\n\n"
+                readme_content[:summary_position]
                 + readme_content[next_section_position:]
             )
 
+    # Add the new summary and file tree
+    summary_content = create_summary_without_pages(file_map)
+    updated_content = readme_content + "\n\n" + summary_content + "\n\n" + file_tree
+
     # Save the updated README.md
     with readme_file.open("w", encoding="utf-8") as file:
-        file.write(readme_content)
+        file.write(updated_content)
 
 
 # Generate the list of markdown files following the tree structure
