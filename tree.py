@@ -30,9 +30,9 @@ def tree(dir_path: Path, prefix: str = "", base_url: str = ""):
     pointers = [tee] * (len(contents) - 1) + [last]
     for pointer, path in zip(pointers, contents):
         display_name = path.stem  # Remove the file extension
-        link = base_url + path.name  # Create the link for the file
+        link = base_url + path.name  # Create the link for the file with extension
         if path.suffix == ".md":
-            link = f"{link}.pdf"  # Change to PDF link if it's a markdown file
+            link = f"{link}.pdf"  # Link to PDF if the file is Markdown
         yield f'{prefix}{pointer}<a href="{link}">{display_name}</a>'
         if path.is_dir():  # extend the prefix and recurse:
             extension = branch if pointer == tee else space
