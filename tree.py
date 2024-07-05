@@ -14,7 +14,7 @@ tee = "  - "
 last = "   - "
 
 
-def tree(dir_path: Path, prefix: str = ""):
+def tree(dir_path: Path, prefix: str = "", base_url: str = ""):
     """A recursive generator, given a directory Path object
     will yield a visual tree structure line by line
     with each line prefixed by the same characters
@@ -30,11 +30,14 @@ def tree(dir_path: Path, prefix: str = ""):
     pointers = [tee] * (len(contents) - 1) + [last]
     for pointer, path in zip(pointers, contents):
         display_name = path.stem  # Remove the file extension
-        yield prefix + pointer + display_name
+        link = base_url + path.name  # Create the link for the file
+        if path.suffix == ".md":
+            link = f"{link}.pdf"  # Change to PDF link if it's a markdown file
+        yield f'{prefix}{pointer}<a href="{link}">{display_name}</a>'
         if path.is_dir():  # extend the prefix and recurse:
             extension = branch if pointer == tee else space
             # i.e. space because last, └── , above so no more |
-            yield from tree(path, prefix=prefix + extension)
+            yield from tree(path, prefix=prefix + extension, base_url=base_url)
 
 
 def read_markdown_files(file_paths):
@@ -43,7 +46,7 @@ def read_markdown_files(file_paths):
     for file_path in file_paths:
         with file_path.open("r", encoding="utf-8") as file:
             content += (
-                f'<div style="page-break-before: always;"></div>\n# {file_path.stem}\n\n'
+                f'<div style="page-break-before: always;"></div>\n<h1 id="{file_path.stem}">{file_path.stem}</h1>\n\n'
                 + file.read()
                 + "\n\n"
             )
@@ -86,8 +89,9 @@ else:
             readme_content = file.read()
         markdown_files.remove(readme_file)
 
-    # Generate file tree
-    file_tree = "\n".join(tree(Path(".")))
+    # Generate file tree with base URL for links
+    base_url = ""  # Adjust base URL if necessary
+    file_tree = "\n".join(tree(Path("."), base_url=base_url))
 
     # Find the position of "# Sumário" and replace the old file tree with the new one
     summary_position = readme_content.find("# Sumário")
