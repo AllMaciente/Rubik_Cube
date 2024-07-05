@@ -33,9 +33,7 @@ def tree(dir_path: Path, prefix: str = "", page_map: dict = None):
     pointers = [tee] * (len(contents) - 1) + [last]
     for pointer, path in zip(pointers, contents):
         display_name = path.name  # Keep the file extension
-        link = f"{display_name}"  # Link to the file with .md extension
-        if path.suffix == ".md":
-            link = f"{display_name}"  # Create the link for the file with .md
+        link = f"{display_name}"  # Create the link for the file with .md
         page_map[display_name] = link  # Add entry to page_map
         yield f'{prefix}{pointer}<a href="{link}">{display_name}</a>'
         if path.is_dir():  # Extend the prefix and recurse:
@@ -73,20 +71,51 @@ def convert_markdown_to_pdf(md_content, output_file, wkhtmltopdf_path=None):
         "encoding": "UTF-8",
         "footer-right": "[page]",
         "footer-font-size": "10",
+        "no-outline": None,  # Disable outlines for links
     }
 
     # Convert the HTML content to PDF
     pdfkit.from_string(html_content, output_file, configuration=config, options=options)
 
 
-def create_summary_with_pages(file_map):
-    """Create a summary section with page numbers"""
+def create_summary_without_pages(file_map):
+    """Create a summary section without page numbers"""
     summary = "<h1>Sumário</h1>\n"
     for file_name, link in file_map.items():
-        summary += (
-            f'<p><a href="{link}">{file_name}</a> - Page {file_map[file_name]}</p>\n'
-        )
+        summary += f'<p><a href="{link}">{file_name}</a></p>\n'
     return summary
+
+
+def update_readme_with_links(file_map, file_tree):
+    """Update README.md with links to the PDF pages"""
+    readme_content = ""
+    if readme_file.exists():
+        with readme_file.open("r", encoding="utf-8") as file:
+            readme_content = file.read()
+
+    summary_content = create_summary_without_pages(file_map)
+
+    # Find the position of "# Sumário" and replace the old file tree with the new one
+    summary_position = readme_content.find("# Sumário")
+    if summary_position != -1:
+        summary_position_end = readme_content.find("\n", summary_position)
+        if summary_position_end != -1:
+            next_section_position = readme_content.find("#", summary_position_end + 1)
+            if next_section_position == -1:
+                next_section_position = len(readme_content)
+            readme_content = (
+                readme_content[: summary_position_end + 1]
+                + "\n\n"
+                + summary_content
+                + "\n\n"
+                + file_tree
+                + "\n\n"
+                + readme_content[next_section_position:]
+            )
+
+    # Save the updated README.md
+    with readme_file.open("w", encoding="utf-8") as file:
+        file.write(readme_content)
 
 
 # Generate the list of markdown files following the tree structure
@@ -112,30 +141,8 @@ else:
     page_map = {}
     file_tree = "\n".join(tree(Path("."), page_map=page_map))
 
-    # Create the summary with pages
-    summary_content = create_summary_with_pages(page_map)
-
-    # Find the position of "# Sumário" and replace the old file tree with the new one
-    summary_position = readme_content.find("# Sumário")
-    if summary_position != -1:
-        summary_position_end = readme_content.find("\n", summary_position)
-        if summary_position_end != -1:
-            next_section_position = readme_content.find("#", summary_position_end + 1)
-            if next_section_position == -1:
-                next_section_position = len(readme_content)
-            readme_content = (
-                readme_content[: summary_position_end + 1]
-                + "\n\n"
-                + summary_content
-                + "\n\n"
-                + file_tree
-                + "\n\n"
-                + readme_content[next_section_position:]
-            )
-
-    # Save the updated README.md
-    with readme_file.open("w", encoding="utf-8") as file:
-        file.write(readme_content)
+    # Update README.md with links
+    update_readme_with_links(page_map, file_tree)
 
     # Read the content of all other markdown files
     combined_content = (
