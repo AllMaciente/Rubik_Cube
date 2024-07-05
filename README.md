@@ -17,8 +17,8 @@ asdasdas
 <p><a href="1_ 1 - introdução.md">1_ 1 - introdução.md</a></p>
 <p><a href="1_ 2 - Tutorial">1_ 2 - Tutorial</a></p>
 <p><a href="1º PASSO: PREPARAR A CRUZ.md">1º PASSO: PREPARAR A CRUZ.md</a></p>
-<p><a href="README.md">README.md</a></p>a
-
+<p><a href="README.md">README.md</a></p>aasd
+a
 
 <h1>Sumário</h1>
 <p><a href="0 - Movimentos Básicos.md">0 - Movimentos Básicos.md</a></p>
