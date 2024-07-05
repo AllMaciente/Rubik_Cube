@@ -14,11 +14,14 @@ tee = "  - "
 last = "   - "
 
 
-def tree(dir_path: Path, prefix: str = "", base_url: str = ""):
+def tree(dir_path: Path, prefix: str = "", base_url: str = "", page_map: dict = None):
     """A recursive generator, given a directory Path object
     will yield a visual tree structure line by line
     with each line prefixed by the same characters
     """
+    if page_map is None:
+        page_map = {}
+
     contents = sorted(
         p
         for p in dir_path.iterdir()
@@ -30,14 +33,17 @@ def tree(dir_path: Path, prefix: str = "", base_url: str = ""):
     pointers = [tee] * (len(contents) - 1) + [last]
     for pointer, path in zip(pointers, contents):
         display_name = path.stem  # Remove the file extension
-        link = base_url + path.name  # Create the link for the file with extension
+        link = base_url + path.name
         if path.suffix == ".md":
             link = f"{link}.pdf"  # Link to PDF if the file is Markdown
+        page_map[display_name] = link  # Add entry to page_map
         yield f'{prefix}{pointer}<a href="{link}">{display_name}</a>'
         if path.is_dir():  # extend the prefix and recurse:
             extension = branch if pointer == tee else space
             # i.e. space because last, └── , above so no more |
-            yield from tree(path, prefix=prefix + extension, base_url=base_url)
+            yield from tree(
+                path, prefix=prefix + extension, base_url=base_url, page_map=page_map
+            )
 
 
 def read_markdown_files(file_paths):
@@ -64,10 +70,15 @@ def convert_markdown_to_pdf(md_content, output_file, wkhtmltopdf_path=None):
         pdfkit.configuration(wkhtmltopdf=wkhtmltopdf_path) if wkhtmltopdf_path else None
     )
 
+    # Add footer with page numbers
+    options = {
+        "encoding": "UTF-8",
+        "footer-right": "[page]",
+        "footer-font-size": "10",
+    }
+
     # Convert the HTML content to PDF
-    pdfkit.from_string(
-        html_content, output_file, configuration=config, options={"encoding": "UTF-8"}
-    )
+    pdfkit.from_string(html_content, output_file, configuration=config, options=options)
 
 
 # Generate the list of markdown files following the tree structure
@@ -89,9 +100,10 @@ else:
             readme_content = file.read()
         markdown_files.remove(readme_file)
 
-    # Generate file tree with base URL for links
+    # Generate file tree with base URL for links and page mapping
     base_url = ""  # Adjust base URL if necessary
-    file_tree = "\n".join(tree(Path("."), base_url=base_url))
+    page_map = {}
+    file_tree = "\n".join(tree(Path("."), base_url=base_url, page_map=page_map))
 
     # Find the position of "# Sumário" and replace the old file tree with the new one
     summary_position = readme_content.find("# Sumário")
