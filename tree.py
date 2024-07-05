@@ -79,15 +79,15 @@ def convert_markdown_to_pdf(md_content, output_file, wkhtmltopdf_path=None):
 
 
 def create_summary_without_pages(file_map):
-    """Create a summary section without page numbers"""
+    """Create a summary section with links, but without page numbers"""
     summary = "<h1>Sumário</h1>\n"
     for file_name, link in file_map.items():
         summary += f'<p><a href="{link}">{file_name}</a></p>\n'
     return summary
 
 
-def update_readme_with_links(file_map, file_tree):
-    """Update README.md with links to the PDF pages"""
+def update_readme_with_links(file_map):
+    """Update README.md with links to files"""
     if not readme_file.exists():
         print(f"{readme_file} does not exist.")
         return
@@ -109,9 +109,9 @@ def update_readme_with_links(file_map, file_tree):
                 + readme_content[next_section_position:]
             )
 
-    # Add the new summary and file tree
+    # Add the new summary
     summary_content = create_summary_without_pages(file_map)
-    updated_content = readme_content + "\n\n" + summary_content + "\n\n" + file_tree
+    updated_content = readme_content + "\n\n" + summary_content
 
     # Save the updated README.md
     with readme_file.open("w", encoding="utf-8") as file:
@@ -142,7 +142,7 @@ else:
     file_tree = "\n".join(tree(Path("."), page_map=page_map))
 
     # Update README.md with links
-    update_readme_with_links(page_map, file_tree)
+    update_readme_with_links(page_map)
 
     # Read the content of all other markdown files
     combined_content = (
