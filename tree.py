@@ -33,7 +33,7 @@ def tree(dir_path: Path, prefix: str = "", page_map: dict = None):
     pointers = [tee] * (len(contents) - 1) + [last]
     for pointer, path in zip(pointers, contents):
         display_name = path.name  # Keep the file extension
-        link = f"{display_name}"  # Create the link for the file with .md
+        link = f"{display_name}"  # Link to the file with .md extension
         page_map[display_name] = link  # Add entry to page_map
         yield f'{prefix}{pointer}<a href="{link}">{display_name}</a>'
         if path.is_dir():  # Extend the prefix and recurse:
