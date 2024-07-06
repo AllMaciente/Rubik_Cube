@@ -41,4 +41,4 @@ Cada lado do cubo é representado pela sua inicial em inglês. Se a letra estive
 
 ### B - back / atrás horário.
 
-![B - back / atrás horário.](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-bh-2.png)
+![B - back / atrás horário.](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-bh-2.png )
