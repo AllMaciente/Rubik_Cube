@@ -4,4 +4,41 @@ Para solucionar o Cubo Mágico nós vamos utilizar algumas fórmulas, que são s
 
 Cada lado do cubo é representado pela sua inicial em inglês. Se a letra estiver sozinha significa que o movimento é no sentido horário. Se estiver acompanhada de um apóstrofo, significa que é no sentido anti-horário. E se for seguida do número 2, significa que é um movimento duplo.
 
-<p></p><p></p><p></p><p></p><div class="col-md-4"><img src="//i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-rh-2.png" alt="" width="261" height="261" class="alignleft size-full wp-image-3703"><strong>R</strong> - right / direita horário.</div><div class="col-md-4"><img src="//i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-ra-2.png" alt="" width="261" height="261" class="alignleft size-full wp-image-3701"><strong>R'</strong> - right / direita anti-horário.</div><p></p><p></p><div class="col-md-4"><img src="//i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-rd-2.png" alt="" width="261" height="261" class="alignleft size-full wp-image-3702"><strong>R2</strong> - right / direita duplo.</div><p></p><p></p><div class="col-md-4"><img src="//i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-lh-2.png" alt="" width="261" height="261" class="alignleft size-full wp-image-3700"><strong>L</strong> - left / esquerda horário.</div><p></p><p></p><div class="col-md-4"><img src="//i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-la-2.png" alt="" width="261" height="261" class="alignleft size-full wp-image-3698"><strong>L'</strong> - left / esquerda anti-horário.</div><p></p><p></p><div class="col-md-4"><img src="//i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-ld-2.png" alt="" width="261" height="261" class="alignleft size-full wp-image-3699"><strong>L2</strong> - left / esquerda duplo.</div><p></p><p></p><div class="col-md-3"><img src="//i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-uh-2.png" alt="" width="261" height="261" class="alignleft size-full wp-image-3704"><strong>U</strong> - up / topo horário.</div><p></p><p></p><div class="col-md-3"><img src="//i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-dh.png" alt="" width="261" height="261" class="alignleft size-full wp-image-3696"><strong>D</strong> - down / base horário.</div><p></p><p></p><div class="col-md-3"><img src="//i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-fh-2.png" alt="" width="261" height="261" class="alignleft size-full wp-image-3697"><strong>F</strong> - front / face horário.</div><p></p><p></p><div class="col-md-3"><img src="//i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-bh-2.png" alt="" width="261" height="261" class="alignleft size-full wp-image-3695"><strong>B</strong> - back / atrás horário.</div><p></p><p></p>
+### **R** - right / direita horário
+
+![R - right / direita horário](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-rh-2.png)
+
+### **R'** - right / direita anti-horário.
+
+![R' - right / direita anti-horário.](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-ra-2.png)
+
+### **R2** - right / direita duplo.
+
+![R2 - right / direita duplo.](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-rd-2.png)
+
+### **L** - left / esquerda horário.
+
+![L - left / esquerda horário.](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-lh-2.png)
+
+### **L'** - left / esquerda anti-horário.
+
+![L' - left / esquerda anti-horário.](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-la-2.png)
+
+### **L2** - left / esquerda duplo.
+
+![L2 - left / esquerda duplo](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-ld-2.png)
+
+### **U** - up / topo horário.
+
+![U - up / topo horário.](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-uh-2.png)
+
+### D - down / base horário.
+![D - down / base horário.](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-dh.png)
+
+### F - front / face horário.
+
+![F - front / face horário.](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-fh-2.png)
+
+### B - back / atrás horário.
+
+![B - back / atrás horário.](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/movimento-cubo-magico-bh-2.png)
