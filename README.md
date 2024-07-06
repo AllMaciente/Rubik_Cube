@@ -3,7 +3,11 @@ meus estudos para resolver um cubo magico
 asdasdas
 
 # Sumario
- - [0 - Movimentos Básicos](0%20-%20Movimentos%20Básicos.md)
- - [1 - Método Básico](1%20-%20Método%20Básico)
-   - [1.1 - introdução.md](1%20-%20Método%20Básico/1.1%20-%20introdução.md)
-   - 1.2 - Tutorial
+
+.
+├── 0 - Movimentos Básicos.md
+├── 1 - Método Básico
+│  ├── 1.1 - introdução.md
+│  └── 1.2 - Tutorial
+│     └── 1º PASSO: PREPARAR A CRUZ.md
+└── README.md
