@@ -1,33 +1,3 @@
-# Extras
-## PASSO 4 - Segunda camada.
-### Algoritimo 1
-![alt text](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/07/f2l-caso-07.png)
-
-Para facilitar em vez de repetir um algorítimo duas vezes podemos usar o seguinte algorítimo
-
-formula: **(R U2 R' U)2 F' U' F**
-
-[Exemplo em video (1:28)](https://youtu.be/3ozKDPk6oAw?list=PLN0OEk4xKN9TEo8F-EADFqb-U9xWTNc2H&t=88)
- 
-## PASSO 5 Cruz amarela.
-### CASO L
-![alt text](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/05/metodo-basico-cubo-magico-caso-l.png)
-
-Em vez de que transformar no caso linha ja vamos direto para a cruz amarela Com essa formula 
-
-formula: **F U R U' R' F'**
-
-## PASSO 7 Finalizar as quinas.
-### Algorítimo 1
-![Img](../assets/2.png)
-maneira mais fácil de deixar todas as faces com as quinas iguais 
-O primeiro passo e deixar uma face com a quina ja formada para trás
-[|Exemplo em video (3:13)|](https://youtu.be/CrOB6mSECjI?list=PLN0OEk4xKN9TEo8F-EADFqb-U9xWTNc2H&t=193)
- 
-X = Mover o cubo inteiro na mesma rotação de movimento r
-
-Formula: X (R' U R') D2 (R U' R') D2 R2
-
 ## PASSO 8 Finalizar os meios.
 ### Minerva UA
 ![as](../assets/0.png)
