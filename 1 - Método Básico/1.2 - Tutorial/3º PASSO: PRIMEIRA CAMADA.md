@@ -22,3 +22,7 @@ Neste exemplo você precisa remover a quina branca do topo e depois inserir corr
 
 Repita o processo com todos as 4 quinas brancos até completar toda a primeira camada do cubo.
 
+## Resultado final:
+
+![alt text](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/07/metodo-basico-cubo-magico-03.png)
+

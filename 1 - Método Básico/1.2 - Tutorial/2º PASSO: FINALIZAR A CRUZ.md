@@ -14,3 +14,7 @@ Movimento duplo da face para desce o meio branco para a base do cubo.
 ![alt text](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/11/metodo-basico-cubo-magico-passo-2-02.png)
 
 Repita o processo com todos os 4 meios brancos, girando apenas o topo e as faces.
+
+## Resultado final:
+
+![alt text](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/07/metodo-avancado-cruz-02.png)

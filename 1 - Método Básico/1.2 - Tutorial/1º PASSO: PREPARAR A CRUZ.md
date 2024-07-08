@@ -24,3 +24,7 @@ Basicamente a mesma situação do caso anterior, porém com o meio no topo do cu
 Um caso muito comum, onde basta liberar o espaço girando o topo e depois inserir o meio.
 
 ![alt text](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/11/metodo-basico-cubo-magico-passo-1-04.png)
+
+## Resultado final:
+
+![alt text](https://i0.wp.com/cubovelocidade.com.br/wp-content/uploads/2020/07/metodo-basico-cubo-magico-01.png)
