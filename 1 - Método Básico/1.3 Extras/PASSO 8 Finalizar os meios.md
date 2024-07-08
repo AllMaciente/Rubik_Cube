@@ -1,6 +1,6 @@
 ## PASSO 8 Finalizar os meios.
 ### Minerva UA
-![img](assets/0.png)
+![img](/assets/0.png)
 
 quando vc tem que mover a peça central para direita
 [|Exemplo em video (7:12)|](https://youtu.be/3ozKDPk6oAw?list=PLN0OEk4xKN9TEo8F-EADFqb-U9xWTNc2H&t=432)
