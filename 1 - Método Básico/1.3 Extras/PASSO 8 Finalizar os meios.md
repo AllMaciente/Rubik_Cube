@@ -1,6 +1,6 @@
 ## PASSO 8 Finalizar os meios.
 ### Minerva UA
-![img](../assets/0.png)
+![img](assets/0.png)
 
 quando vc tem que mover a peça central para direita
 [|Exemplo em video (7:12)|](https://youtu.be/3ozKDPk6oAw?list=PLN0OEk4xKN9TEo8F-EADFqb-U9xWTNc2H&t=432)
@@ -9,7 +9,7 @@ formula: **(R U' R U)(R U R U')(R' U' R2)**
 
 Para deixar nesse Caso: R2 U R U R' U' R' U' R' U R'
 ### Minerva UB
-![img](../assets/1.png)
+![img](/assets/1.png)
 
 quando vc tem que mover a peça central para esquerda
 [|Exemplo em video (9:49)|](https://youtu.be/3ozKDPk6oAw?list=PLN0OEk4xKN9TEo8F-EADFqb-U9xWTNc2H&t=589)
@@ -31,7 +31,7 @@ formula: **(M2' U M2') U2 (M2' U M2')**
 Para deixar nesse Caso: So repeti o caso dele mesmo'
 
 ### Caso Z
-![img](../assets/4.png)
+![img](/assets/4.png)
 
 quando as peças do meio sao das cores do lado da cor central
 
